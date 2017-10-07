@@ -3,7 +3,8 @@
 
 import sys
 
+surname = raw_input("What's your surname? ")
 name = raw_input("What's your name? ")
 fathersName = raw_input("What's your father's name? ")
 
-print('Вітаю, {} {}'.format(name, fathersName))
+print('Вітаю, {} {} {}'.format(surname, name, fathersName))

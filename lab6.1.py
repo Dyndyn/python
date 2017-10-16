@@ -4,11 +4,14 @@
 import math
 
 arr = list(input("What's first, second, third side (write using comma)? "))
-arr.sort()
 
-if arr[0] + arr[1] > arr[2]:
-    p = sum(arr)/2
-    square = math.sqrt(p*(p-arr[0])*(p-arr[1])*(p-arr[2]))
-    print("Square = %f" % square)
-else:
-    print ("triangle can NOT exist")
+def square(args):
+    args.sort()
+
+    if args[0] + args[1] > args[2]:
+        p = sum(args)/2
+        return math.sqrt(p*(p-args[0])*(p-args[1])*(p-args[2]))
+    else:
+        print ("triangle can NOT exist")
+print("Square = %f" % square(arr))
+

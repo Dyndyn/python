@@ -21,3 +21,4 @@ def quicksort(array):
         return array
 
 print(quicksort([12,4,5,6,7,3,1,15,7,18,20,2,16]))
+print(quicksort(["acx", "asx", "sd", "l"]))

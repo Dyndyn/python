@@ -1,0 +1,5 @@
+4 45
+Deneb -10 10
+Algol 10 10
+Sirius -10 -10
+Mira 10 -10

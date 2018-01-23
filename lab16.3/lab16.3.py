@@ -30,7 +30,7 @@ first = data.pop(0)
 for line in data:
     try:
         children = line.getchildren()
-        schools.append(School(children[0].text_content().strip(),children[1].text_content().strip(),
+        schools.append(School(children[0].text_content().strip(),re.sub('\s+', '-',children[1].text_content().strip()),
                               children[2].text_content().strip(),children[3].text_content().strip(),
                               re.sub('\s+', '-',children[4].text_content().strip()),children[5].text_content().strip(),
                               children[6].text_content().strip()))
@@ -40,5 +40,6 @@ for line in data:
 f = open('out.txt', 'wt', encoding='utf8')
 for th in first.getchildren():
     f.write(th.text_content().strip() + ",")
+f.write('\n')
 for school in schools:
     f.write(str(school) + "\n")

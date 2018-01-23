@@ -31,7 +31,7 @@ for index, line in enumerate(user_data):
     except Exception as e:
         print(e)
 
-f = open('16.1lab/out.txt', 'wt', encoding='utf8')
+f = open('out.txt', 'wt', encoding='utf8')
 # for user in users:
 writer = csv.writer(f)
 writer.writerow(users)

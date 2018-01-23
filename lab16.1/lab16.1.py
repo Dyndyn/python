@@ -25,7 +25,7 @@ user_data = tree.xpath('//tr[@class="centered none"]')
 # user_data = tree.xpath('//table[@class="table table-striped table-bordered full-width ranking-table"]/node()')
 
 users = []
-for index, line in enumerate(user_data):
+for line in user_data:
     try:
         users.append(User(str(line[0].text_content()), str(line[2].text_content()).strip(), str(line[4].text_content()), str(line[5].text_content()), str(line[7].text_content())))
     except Exception as e:

@@ -3,7 +3,6 @@
 
 from lxml import html, cssselect
 import requests
-import csv
 
 
 class Notebook:
@@ -15,7 +14,7 @@ class Notebook:
         self.img_link = img_link
 
     def __str__(self) -> str:
-        return "{} {} {} {} {}".format(self.name, self.price, self.description, self.link, self.img_link)
+        return "{},{},{},{},{}".format(self.name, self.price, self.description, self.link, self.img_link)
 
 
 page = requests.get('http://price.ua/catc839t14.html?price[min]=10000&price[max]=20000')
@@ -40,6 +39,5 @@ for line in data:
     notebooks.append(Notebook(name, price, description, link, img_link))
 
 f = open('out.txt', 'wt', encoding='utf8')
-
-writer = csv.writer(f)
-writer.writerow(notebooks)
+for notebook in notebooks:
+    f.write(str(notebook) + ",")

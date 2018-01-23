@@ -15,7 +15,7 @@ class User:
         self.solved = solved
 
     def __str__(self) -> str:
-        return "{} {} {} {} {}".format(self.number, self.name, self.rank, self.enlightenment, self.solved)
+        return "{},{},{},{},{}".format(self.number, self.name, self.rank, self.enlightenment, self.solved)
 
 
 page = requests.get('http://www.codeabbey.com/index/user_ranking')
@@ -32,6 +32,5 @@ for line in user_data:
         print(e)
 
 f = open('out.txt', 'wt', encoding='utf8')
-# for user in users:
-writer = csv.writer(f)
-writer.writerow(users)
+for user in users:
+    f.write(str(user) + "\n")
